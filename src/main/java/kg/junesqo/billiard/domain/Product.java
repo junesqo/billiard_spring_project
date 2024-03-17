@@ -1,9 +1,8 @@
 package kg.junesqo.billiard.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.Set;
 
 @Entity
 public class Product {
@@ -12,6 +11,19 @@ public class Product {
     private String name;
     private Integer price;
     private String description;
+
+    @ManyToMany
+    @JoinTable(name = "category_product", joinColumns = @JoinColumn(name = "product_id"),
+            inverseJoinColumns = @JoinColumn(name = "category_id"))
+    private Set<Category> categories;
+
+    public Set<Category> getCategories() {
+        return categories;
+    }
+
+    public void setCategories(Set<Category> categories) {
+        this.categories = categories;
+    }
 
     public String getName() {
         return name;
