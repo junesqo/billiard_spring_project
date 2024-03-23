@@ -2,6 +2,7 @@ package kg.junesqo.billiard.domain;
 
 import jakarta.persistence.*;
 
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
@@ -14,7 +15,7 @@ public class Category {
     private String title;
 
     @ManyToMany(mappedBy = "categories")
-    private Set<Product> products;
+    private Set<Product> products = new HashSet<>();
 
     public Set<Product> getProducts() {
         return products;
