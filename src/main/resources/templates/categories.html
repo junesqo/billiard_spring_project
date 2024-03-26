@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Categories</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+    </tr>
+    <tr th:each="category : ${categories}">
+        <td th:text="${category.id}">123</td>
+        <td th:text="${category.title}">Spring</td>
+    </tr>
+</table>
+</body>
+</html>
