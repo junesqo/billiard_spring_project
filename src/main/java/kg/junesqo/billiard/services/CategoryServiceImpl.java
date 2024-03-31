@@ -2,7 +2,9 @@ package kg.junesqo.billiard.services;
 
 import kg.junesqo.billiard.domain.Category;
 import kg.junesqo.billiard.repositories.CategoryRepository;
+import org.springframework.stereotype.Service;
 
+@Service
 public class CategoryServiceImpl implements CategoryService {
 
     private final CategoryRepository categoryRepository;
